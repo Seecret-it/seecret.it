@@ -1,4 +1,6 @@
 📦 Seecret.it — Partage sécurisé par lien à usage unique
+![Status](https://img.shields.io/badge/Project-Active-brightgreen)
+![Security](https://img.shields.io/badge/Encrypted-Yes-blue)
 
 Seecret.it est un service en ligne permettant de partager mots de passe, documents ou informations sensibles via des liens chiffrés et à usage unique. Votre donnée reste invisible, sécurisée, et s’autodétruit après consultation. Idéal pour les équipes IT, les entreprises, les indépendants et toute personne souhaitant transmettre des informations en toute confidentialité.
 
