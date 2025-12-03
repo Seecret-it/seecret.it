@@ -2,13 +2,13 @@
   <img src="./Presentation_web.jpg" alt="Seecret.it logo">
 </p>
 
-📦 Seecret.it — Partage sécurisé par lien à usage unique
+<h1>📦 Seecret.it — Partage sécurisé par lien à usage unique</h1>
 ![Status](https://img.shields.io/badge/Project-Active-brightgreen)
 ![Security](https://img.shields.io/badge/Encrypted-Yes-blue)
 
 Seecret.it est un service en ligne permettant de partager mots de passe, documents ou informations sensibles via des liens chiffrés et à usage unique. Votre donnée reste invisible, sécurisée, et s’autodétruit après consultation. Idéal pour les équipes IT, les entreprises, les indépendants et toute personne souhaitant transmettre des informations en toute confidentialité.
 
-🔐 Fonctionnalités principales
+<h1>🔐 Fonctionnalités principales</h1>
 
 Chiffrement côté serveur et suppression automatique après lecture
 
@@ -28,7 +28,7 @@ API simple permettant d’envoyer du texte et récupérer un lien unique
 
 Extensions et outils en cours de développement (Thunderbird, navigateur, etc.)
 
-🚀 Pourquoi utiliser Seecret.it ?
+<h1>🚀 Pourquoi utiliser Seecret.it ?</h1>
 
 L’envoi de mots de passe par email, SMS ou messagerie expose vos données.
 Avec Seecret.it, aucune information sensible ne transite dans vos messages :
@@ -68,11 +68,11 @@ https://seecret.it/fr/password-generator
 
 📰 Blog & SEO : https://seecret.it/fr/blog
 
-🏷️ Mots-clés
+<h1>🏷️ Mots-clés</h1>
 
 security · password-sharing · encrypted-links · privacy · cybersecurity · qrcode-wifi · saas · confidentiality · secure-messaging
 
-🧑‍💻 À propos
+<h1>🧑‍💻 À propos</h1>
 
 Développé pour simplifier le partage de données sensibles et améliorer les pratiques de sécurité au quotidien.
 Seecret.it évolue constamment — de nouvelles intégrations et fonctionnalités arrivent régulièrement.
