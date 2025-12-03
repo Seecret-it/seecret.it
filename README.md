@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="./Presentation_web.jpg" width="200" alt="Seecret.it logo">
+  <img src="./Presentation_web.jpg" alt="Seecret.it logo">
 </p>
 
 📦 Seecret.it — Partage sécurisé par lien à usage unique
