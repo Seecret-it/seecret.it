@@ -3,6 +3,7 @@
 </p>
 
 <h1>📦 Seecret.it — Partage sécurisé par lien à usage unique</h1>
+
 ![Status](https://img.shields.io/badge/Project-Active-brightgreen)
 ![Security](https://img.shields.io/badge/Encrypted-Yes-blue)
 
