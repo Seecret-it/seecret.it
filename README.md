@@ -67,7 +67,7 @@ https://seecret.it/fr/password-generator
 
 🔐 Politique de confidentialité : https://seecret.it/fr/privacy-policy
 
-📰 Blog & SEO : https://seecret.it/fr/blog
+📰 Blog & SEO : https://seecret.it/blog
 
 <h1>🏷️ Mots-clés</h1>
 
