@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lire un secret - Seecret.it</title>
+  <meta name="description" content="Lecture d'un secret chiffré côté client. Version open-source de Seecret.it.">
+  <meta name="referrer" content="no-referrer">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; connect-src 'self'; font-src 'self' data:; frame-ancestors 'none'; base-uri 'self'; form-action 'self'">
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/sweetalert.css">
+  <link rel="stylesheet" href="css/style.css?v=2">
+</head>
+<body>
+  <nav class="navbar-custom">
+    <div class="container">
+      <a href="index.html" class="navbar-brand-custom">
+        <span class="logo-icon">S</span>
+        Seecret.it
+        <span class="badge-custom">Self-hosted</span>
+      </a>
+    </div>
+  </nav>
+
+  <main class="main-container">
+    <div class="card-secret">
+      <h1>Secret partagé</h1>
+      <p class="subtitle">Déchiffrement local — rien ne transite par le serveur.</p>
+
+      <div id="gate" class="gate-box">
+        <div class="gate-icon" aria-hidden="true">
+          <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+        </div>
+        <h2 class="gate-title">Un secret vous attend</h2>
+        <p class="gate-subtitle">Attention : le secret sera <strong>détruit dès cette lecture</strong>. Copiez-le ailleurs si vous voulez le conserver.</p>
+        <label class="gate-confirm">
+          <input type="checkbox" id="not-robot-check">
+          <span>Je ne suis pas un robot</span>
+        </label>
+        <button type="button" id="reveal-btn" class="btn-primary-custom" disabled>Voir le secret</button>
+      </div>
+
+      <div id="loading" class="info-banner" style="display:none;">Récupération et déchiffrement…</div>
+
+      <div id="error" class="info-banner" style="display:none; border-left-color: var(--color-danger); background: rgba(255, 91, 87, 0.08); color: var(--color-heading);"></div>
+
+      <div id="secret-box" style="display:none;">
+        <div class="info-banner" style="border-left-color: var(--color-success); background: rgba(26, 235, 214, 0.08);">
+          <strong>Secret détruit.</strong> Ce contenu n'est plus disponible côté serveur — copiez-le maintenant si nécessaire.
+        </div>
+        <div id="secret-content" class="secret-view"></div>
+        <div class="result-actions">
+          <button type="button" id="copy-secret-btn" class="btn-primary-custom" style="width:auto;">Copier</button>
+          <a href="index.html" class="btn-secondary-custom" style="text-decoration:none;">Créer un secret</a>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer class="footer-custom">
+    Version auto-hébergée open-source de
+    <a href="https://seecret.it" target="_blank" rel="noopener">Seecret.it</a>
+    &nbsp;·&nbsp;
+    <a href="https://github.com/Seecret-it/seecret.it" target="_blank" rel="noopener">GitHub</a>
+  </footer>
+
+  <script src="js/sweetalert.js"></script>
+  <script src="js/crypto.js?v=2"></script>
+  <script src="js/view.js?v=2"></script>
+</body>
+</html>

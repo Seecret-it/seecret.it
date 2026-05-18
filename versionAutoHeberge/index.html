@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Seecret.it - Version auto-hébergée</title>
+  <meta name="description" content="Version open-source minimaliste de Seecret.it : partagez du texte chiffré via un lien. Tout reste côté client (AES-GCM, Web Crypto API).">
+  <meta name="referrer" content="no-referrer">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; connect-src 'self'; font-src 'self' data:; frame-ancestors 'none'; base-uri 'self'; form-action 'self'">
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/sweetalert.css">
+  <link rel="stylesheet" href="css/style.css?v=2">
+</head>
+<body>
+  <nav class="navbar-custom">
+    <div class="container">
+      <a href="index.html" class="navbar-brand-custom">
+        <span class="logo-icon">S</span>
+        Seecret.it
+        <span class="badge-custom">Self-hosted</span>
+      </a>
+    </div>
+  </nav>
+
+  <main class="main-container">
+    <div class="card-secret">
+      <h1>Créer un secret</h1>
+      <p class="subtitle">Saisissez un texte, obtenez un lien unique. Le contenu est chiffré dans votre navigateur — il n'est jamais envoyé à un serveur.</p>
+
+      <div class="info-banner">
+        <strong>Zéro-knowledge.</strong> Le texte est chiffré dans votre navigateur (AES-GCM 256 bits). Seul le ciphertext est stocké en base — la clé reste dans le fragment <code>#</code> de l'URL et n'arrive jamais sur le serveur. Le secret est <strong>détruit dès la première lecture</strong>.
+      </div>
+
+      <form id="create-form">
+        <div class="mb-3">
+          <label class="form-label-custom" for="secret-input">Contenu du secret</label>
+          <textarea
+            id="secret-input"
+            class="form-control-custom"
+            placeholder="Mot de passe, message, clé API..."
+            maxlength="10000"
+            required></textarea>
+          <small id="char-counter" class="text-muted">0 / 10000</small>
+        </div>
+
+        <div class="options-row">
+          <div>
+            <label class="form-label-custom" for="expires-select">Expiration</label>
+            <select id="expires-select" class="form-control-custom">
+              <option value="300">5 minutes</option>
+              <option value="3600">1 heure</option>
+              <option value="86400" selected>1 jour</option>
+              <option value="604800">7 jours</option>
+              <option value="2592000">30 jours</option>
+            </select>
+          </div>
+          <div>
+            <label class="form-label-custom" for="password-input">Mot de passe (optionnel)</label>
+            <input
+              type="password"
+              id="password-input"
+              class="form-control-custom"
+              placeholder="Protection supplémentaire"
+              autocomplete="new-password">
+          </div>
+        </div>
+
+        <button type="submit" id="submit-btn" class="btn-primary-custom">Créer le lien</button>
+      </form>
+    </div>
+  </main>
+
+  <footer class="footer-custom">
+    Version auto-hébergée open-source de
+    <a href="https://seecret.it" target="_blank" rel="noopener">Seecret.it</a>
+    &nbsp;·&nbsp;
+    <a href="https://github.com/Seecret-it/seecret.it" target="_blank" rel="noopener">GitHub</a>
+  </footer>
+
+  <script src="js/sweetalert.js"></script>
+  <script src="js/crypto.js?v=2"></script>
+  <script src="js/app.js?v=2"></script>
+</body>
+</html>

@@ -1,0 +1,42 @@
+# ====== Security headers globaux ======
+<IfModule mod_headers.c>
+    Header always set X-Content-Type-Options "nosniff"
+    Header always set X-Frame-Options "DENY"
+    Header always set Referrer-Policy "no-referrer"
+    Header always set Permissions-Policy "interest-cohort=(), camera=(), microphone=(), geolocation=()"
+    # CSP strict : tout en local, pas d'inline executable (sauf SweetAlert qui en a besoin)
+    Header always set Content-Security-Policy "default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; connect-src 'self'; font-src 'self' data:; frame-ancestors 'none'; base-uri 'self'; form-action 'self'"
+
+    # Decommenter en production HTTPS uniquement :
+    # Header always set Strict-Transport-Security "max-age=31536000; includeSubDomains"
+</IfModule>
+
+# ====== HTTPS redirect (decommenter en prod) ======
+# <IfModule mod_rewrite.c>
+#     RewriteEngine On
+#     RewriteCond %{HTTPS} off
+#     RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+# </IfModule>
+
+# ====== Bloque l'acces aux fichiers sensibles ======
+<FilesMatch "^\.">
+    Require all denied
+    <IfModule !mod_authz_core.c>
+        Order deny,allow
+        Deny from all
+    </IfModule>
+</FilesMatch>
+
+<FilesMatch "\.(md|sqlite|sqlite-journal|sqlite-wal|sqlite-shm|log|bak|backup|old)$">
+    Require all denied
+    <IfModule !mod_authz_core.c>
+        Order deny,allow
+        Deny from all
+    </IfModule>
+</FilesMatch>
+
+# ====== Bloque le listing de repertoire ======
+Options -Indexes
+
+# ====== ServerSignature off ======
+ServerSignature Off

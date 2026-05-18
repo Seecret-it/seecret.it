@@ -1,0 +1,32 @@
+# Base de données SQLite — ne pas committer.
+# (Elle ne contient QUE des ciphertexts AES-GCM 256 — INCASSABLES sans la clé,
+#  qui reste dans le # de l'URL chez l'expéditeur/destinataire et n'arrive jamais
+#  sur le serveur. Mais c'est de la donnée utilisateur runtime, donc hors versionning.)
+data/*.sqlite
+data/*.sqlite-journal
+data/*.sqlite-wal
+data/*.sqlite-shm
+
+# Logs
+*.log
+error_log
+
+# OS
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Éditeurs / IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# PHP
+.phpunit.result.cache
+
+# Sauvegardes
+*.bak
+*.backup
+*.old
